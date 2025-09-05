@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">NamoMints DApp</title>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="/node_modules/@mysten/dapp-kit/dist/index.css" />
+    <link rel="stylesheet" href="/node_modules/@radix-ui/themes/styles.css" />
+    
+    <style>
+      /* Extra center fallback for non-React content */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body class="light-theme">
+    <!-- React root -->
+    <div id="root"></div>
+
+    <!-- Optional: Theme toggle example before React loads -->
+    <script>
+      const body = document.body;
+      const title = document.getElementById("page-title");
+
+      // Example: dynamically update page title
+      title.textContent = " $ NamoMints DApp $";
+
+      // Demo: automatic theme toggle every 5s (can be removed)
+      setInterval(() => {
+        body.classList.toggle("dark-theme");
+        body.classList.toggle("light-theme");
+      }, 5000);
+    </script>
+
+    <!-- React main entry -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
